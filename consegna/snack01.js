@@ -1,70 +1,27 @@
-const books = [
-    {
-        title: "React Billionaire",
-        pages: 250,
-        author: {
-            name: 'Alice',
-            age: 35
-        },
-        available: false,
-        price: '101€',
-        tags: ['advanced', 'js', 'react', 'senior']
-    },
-    {
-        title: "Advanced JS",
-        pages: 500,
-        author: {
-            name: 'Bob',
-            age: 20
-        },
-        available: true,
-        price: '25€',
-        tags: ['advanced', 'js', 'mid-senior']
-    },
-    {
-        title: "CSS Secrets",
-        pages: 320,
-        author: {
-            name: 'Alice',
-            age: 17
-        },
-        available: true,
-        price: '8€',
-        tags: ['html', 'css', 'junior']
-    },
-    {
-        title: "HTML Mastery",
-        pages: 200,
-        author: {
-            name: 'Charlie',
-            age: 50
-        },
-        available: false,
-        price: '48€',
-        tags: ['html', 'advanced', 'junior', 'mid-senior']
-    },
-];
-
-//Crea una funzione che somma due numeri.
+const books = require("./books.js");
 
 
-function somma(num1, num2) {
-    return num1 + num2;
-}
-//Crea un array (longBooks) con i libri che hanno più di 300 pagine;
 
+//1. Crea un array (longBooks) con i libri che hanno più di 300 pagine;
 const longBooks = books.filter((book) => {
     return book.pages > 300;
 });
+//console.log(longBooks);
 
-//Creare un array (longBooksTitles) che contiene solo i titoli dei libri contenuti in longBooks.
+const longBooks1 = books.filter(book => book.pages > 300);//return implicito
+console.log(longBooks1);
 
+
+
+//2. Creare un array (longBooksTitles) che contiene solo i titoli dei libri contenuti in longBooks.
 const longBooksTitles = longBooks.map((book) => {
     return book.title;
 });
+console.log(longBooksTitles);
 
-//Stampa in console ogni titolo nella console.
 
+
+//3. Stampa in console ogni titolo nella console.
 longBooksTitles.forEach((title) => {
     console.log(title);
 });
