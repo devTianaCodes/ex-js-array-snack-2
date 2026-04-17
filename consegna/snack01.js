@@ -8,12 +8,13 @@ const longBooks = books.filter((book) => {
 });
 //console.log(longBooks);
 
-const longBooks1 = books.filter(book => book.pages > 300);//return implicito
+const longBooks1 = books.filter(book => book.pages > 300);// arrow function, return implicito
 console.log(longBooks1);
 
 
 
-//2. Creare un array (longBooksTitles) che contiene solo i titoli dei libri contenuti in longBooks.
+//2. Creare un array (longBooksTitles) che contiene solo 
+// i titoli dei libri contenuti in longBooks.
 const longBooksTitles = longBooks.map((book) => {
     return book.title;
 });
