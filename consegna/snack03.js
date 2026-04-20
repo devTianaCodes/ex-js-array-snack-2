@@ -6,7 +6,7 @@ const books = require("./books.js");
 const authors = books.map((book) => {
     return book.author;
 });
-console.log(authors);
+//console.log(authors);
 
 // Crea una variabile booleana (areAuthorsAdults) per verificare 
 // se gli autori sono tutti maggiorenni.
@@ -14,21 +14,24 @@ console.log(authors);
 const areAuthorsAdults = authors.every((author) => {
     return author.age >= 18;
 });
-console.log(areAuthorsAdults);
+//console.log(areAuthorsAdults);
 
 // Ordina l’array authors in base all’età, senza creare un nuovo array.
 // (se areAuthorsAdult è true, ordina in ordine crescente, 
 // altrimenti in ordine decrescente)
 
-if (areAuthorsAdults) {
-    authors.sort((a, b) => {
-        return a.age - b.age;
-    });
-} else {
-    authors.sort((a, b) => {
-        return b.age - a.age;
-    });
-}
+// if (areAuthorsAdults) {
+//     authors.sort((a, b) => {
+//         return a.age - b.age;
+//     });
+// } else {
+//     authors.sort((a, b) => {
+//         return b.age - a.age;
+//     });
+// }
+
+authors.sort((a, b) => (a.age - b.age) * (areAuthorsAdults ? 1 : -1));
+
+
 
 console.log(authors);
-console.log(areAuthorsAdults);

@@ -11,16 +11,16 @@ const availableBooks = books.filter(book => book.available === true);
 // (mantieni lo stesso formato e arrotonda al centesimo
 
 const discountedBooks = availableBooks.map((book) => {
-    const numericPrice = parseFloat(book.price);
-    const discountedPrice = numericPrice * 0.8;
+    const numericPrice = book.price.replace("€");
+    const floatPrice = parseFloat(numericPrice)
+    const discountedPrice = floatPrice * .8;
 
     return {
         ...book,
         price: discountedPrice.toFixed(2) + "€"
     };
 });
-
-console.log(discountedBooks);
+// console.log(discountedBooks);
 
 // Salva in una variabile (fullPricedBook) 
 // il primo elemento di discountedBooks che ha un prezzo intero 
@@ -28,8 +28,9 @@ console.log(discountedBooks);
 
 
 const fullPricedBook = discountedBooks.find((book) => {
-    const numericPrice = parseFloat(book.price);
-    return Number.isInteger(numericPrice);
+    const numericPrice = parseFloat(book.price.replace("€",""));
+    //return Number.isInteger(numericPrice);
+    return numericPrice % 1 === 0;
 });
 
 console.log(fullPricedBook);
