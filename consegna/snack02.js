@@ -11,7 +11,7 @@ const availableBooks = books.filter(book => book.available === true);
 // (mantieni lo stesso formato e arrotonda al centesimo
 
 const discountedBooks = availableBooks.map((book) => {
-    const numericPrice = book.price.replace("€");
+    const numericPrice = book.price.replace("€","");
     const floatPrice = parseFloat(numericPrice)
     const discountedPrice = floatPrice * .8;
 
